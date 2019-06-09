@@ -1,4 +1,9 @@
 def prime?(number)
-  (2..number-1).each {|n| return false if number <=1 || number % n == 0}
-  return true
-end 
+  if number < 0 or number == 0 or number == 1
+    return false
+  else
+    (2..number-1).to_a.all? do |n|
+      number % n != 0
+    end
+  end
+end
